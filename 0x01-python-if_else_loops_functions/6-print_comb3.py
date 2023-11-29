@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-for tens_digit in range(10):
-    for units_digit in range(tens_digit + 1, 10):
-        if tens_digit == 8 and units_digit == 9:
-            print(f"{tens_digit}{units_digit}")
+for digit1 in range(0, 10):
+    for digit2 in range(digit1 + 1, 10):
+        if digit1 == 8 and digit2 == 9:
+            print("{}{}".format(digit1, digit2))
         else:
-            print(f"{tens_digit}{units_digit}", end=", ")
+            print("{}{}".format(digit1, digit2), end=", ")
