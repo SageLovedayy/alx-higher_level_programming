@@ -9,4 +9,4 @@ def multiple_returns(sentence):
         lenSentence = 0
 
     my_tuple = (lenSentence, firstChar)
-    return(my_tuple)
+    return (my_tuple)
