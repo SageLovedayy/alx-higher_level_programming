@@ -14,4 +14,4 @@ def max_integer(my_list=[]):
         return (None)
 
 
-print(max_integer([15, 15, 8]))
+print(max_integer([-15, -15, -8]))
