@@ -54,10 +54,13 @@ int is_palindrome(listint_t **head)
 * @head: pointer to head
 * Return: add descr
 */
-
 listint_t *reverse_list(listint_t *head)
 {
 	listint_t *prev, *current, *next;
+
+	prev = NULL;
+	current = head;
+	next = NULL;
 
 	while (current != NULL)
 	{
