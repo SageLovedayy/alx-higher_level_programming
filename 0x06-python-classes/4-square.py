@@ -12,7 +12,7 @@ class Square:
         """getter -square size"""
         return (self.size)
 
-    @setter
+    @size.setter
     def size(self, value):
         """setter -square size"""
         if type(value) is not int:
