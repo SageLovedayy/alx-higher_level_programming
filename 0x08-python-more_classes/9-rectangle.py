@@ -3,12 +3,17 @@
 Module: rectangle
 
 Defines the Rectangle class with private attributes width and height.
-Provides methods to calculate area and perimeter, allows printing using any given symbol,
-deletes instances, keeps track of the number of instances, and has static methods that
-returns the bigger rectangle out of two given rectangles (based on area comparison).
-Includes a class method that returns a new Rectangle instance representing a square.
+Provides methods to calculate area and perimeter
+, allows printing using any given symbol,
+deletes instances, keeps track of the number of instances
+, and has static methods that
+returns the bigger rectangle out of two given
+rectangles (based on area comparison).
+Includes a class method that returns a new Rectangle
+instance representing a square.
 
 """
+
 
 class Rectangle():
     """
@@ -21,20 +26,25 @@ class Rectangle():
         print_symbol (any type): Used to print string representation.
 
     Methods:
-        __init__(self, width=0, height=0): Initializes a new Rectangle instance.
-        __del__(self): Deletes the instance of the rectangle and decrements the count of instances.
+        __init__(self, width=0, height=0): Initializes new Rectangle instance.
+        __del__(self): Deletes the instance of the rectangle and decrements
+        the count of instances.
         width(self): Getter method for retrieving the width of the rectangle.
-        width(self, value): Setter method for setting the width of the rectangle.
+        width(self, value): Setter method for setting width of the rectangle.
         height(self): Getter method for retrieving the height of the rectangle.
-        height(self, value): Setter method for setting the height of the rectangle.
+        height(self, value): Setter method for setting height of the rectangle.
         area(self): Calculates and returns the area of the rectangle.
         perimeter(self): Calculates and returns the perimeter of the rectangle.
-        __str__(self): Returns a string representation of the rectangle with the specified print symbol.
-        __repr__(self): Returns a string representation to recreate a new instance of the rectangle.
+        __str__(self): Returns string representation of the rectangle with the
+        specified print symbol.
+        __repr__(self): Returns a string representation to recreate a
+        new instance of the rectangle.
         @staticmethod
-        bigger_or_equal(rect_1, rect_2): Static method that returns the bigger or equal rectangle out of two given rectangles.
+        bigger_or_equal(rect_1, rect_2): Static method that returns the bigger
+        or equal rectangle out of two given rectangles.
         @classmethod
-        square(cls, size=0): Class method that returns a new rectangle instance with equal width and height, forming a square.
+        square(cls, size=0): Class method that returns a new rectangle instance
+        with equal width and height, forming a square.
     """
 
     number_of_instances = 0
@@ -54,7 +64,8 @@ class Rectangle():
 
     def __del__(self):
         """
-        Deletes the instance of the rectangle and decrements the count of instances.
+        Deletes the instance of the rectangle
+        and decrements the count of instances.
         """
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
@@ -138,7 +149,8 @@ class Rectangle():
 
     def __str__(self):
         """
-        Returns a string representation of the rectangle with the specified print symbol.
+        Returns a string representation of the rectangle with
+        the specified print symbol.
 
         Returns:
             str: String representation of the rectangle.
@@ -151,7 +163,8 @@ class Rectangle():
 
     def __repr__(self):
         """
-        Returns a string representation to recreate a new instance of the rectangle.
+        Returns a string representation to recreate a new
+        instance of the rectangle.
 
         Returns:
             str: String representation of the rectangle.
@@ -161,7 +174,8 @@ class Rectangle():
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
-        Static method that returns the bigger or equal rectangle out of two given rectangles.
+        Static method that returns the bigger or equal rectangle
+        out of two given rectangles.
 
         Args:
             rect_1 (Rectangle): The first rectangle.
@@ -171,11 +185,15 @@ class Rectangle():
             Rectangle: The bigger or equal rectangle.
 
         Raises:
-            TypeError: If either rect_1 or rect_2 is not an instance of Rectangle.
+            TypeError: If either rect_1 or rect_2 is not an
+            instance of Rectangle.
         """
-        if not isinstance(rect_1, Rectangle) or not isinstance(rect_2, Rectangle):
+        if not isinstance(rect_1, Rectangle) or \
+                not isinstance(rect_2, Rectangle):
             raise TypeError("{} must be an instance of Rectangle".
-                            format("rect_1" if not isinstance(rect_1, Rectangle) else "rect_2"))
+                            format("rect_1" if not
+                                   isinstance(rect_1, Rectangle)
+                                   else "rect_2"))
         if rect_2.area() > rect_1.area():
             return rect_2
         return rect_1
@@ -183,7 +201,8 @@ class Rectangle():
     @classmethod
     def square(cls, size=0):
         """
-        Class method that returns a new rectangle instance with equal width and height, forming a square.
+        Class method that returns a new rectangle instance with
+        equal width and height, forming a square.
 
         Args:
             size (int): The size of the square (default is 0).
@@ -192,4 +211,3 @@ class Rectangle():
             Rectangle: A new rectangle instance representing a square.
         """
         return cls(size, size)
-
