@@ -1,47 +1,50 @@
-# TESTS / 1-my_list.py
-# run the test with python3 -m doctest -v ./tests/[filename].txt
+====================
+TESTS / 1-my_list.py
 
->>> MyList = __import__('1-my_list').MyList
+>>> MyList = __import__("1-my_list").MyList
 
-# SUCCESS CASES:
+>>> issubclass(MyList, list)
+True
+>>> l = MyList()
+>>> l.print_sorted()
+[]
+>>> print(l)
+[]
+>>> l.print_sorted()
+[]
+>>> l.append(2)
+>>> l.append(7)
+>>> l.append(9)
+>>> l.append(5)
+>>> print(l)
+[2, 7, 9, 5]
+>>> l.print_sorted()
+[2, 5, 7, 9]
+>>> l.append(0)
+>>> l.append(-3)
+>>> print(l)
+[2, 7, 9, 5, 0, -3]
+>>> l.print_sorted()
+[-3, 0, 2, 5, 7, 9]
+>>> print(l)
+[2, 7, 9, 5, 0, -3]
 
-# Test integers (assuming all elements are of type int):
->>> my_list = MyList()
->>> my_list.append(3)
->>> my_list.append(50)
->>> my_list.append(-1)
->>> assert my_list == [3, 50, -1]
->>> my_list.print_sorted()
->>> assert my_list == [-1, 3, 50]
 
-# Test sorting when the list has only one element:
->>> solo = MyList()
->>> solo.append(-99999)
->>> assert solo == [-99999]
->>> solo.print_sorted()
->>> assert solo == [-99999]
+>>> l = MyList()
+>>> print(l)
+[]
+>>> l.append(-2)
+>>> l.append(-7)
+>>> l.append(-9)
+>>> l.append(-5)
+>>> print(l)
+[-2, -7, -9, -5]
+>>> l.print_sorted()
+[-9, -7, -5, -2]
+>>> print(l)
+[-2, -7, -9, -5]
 
-# Test sorting an empty list:
->>> empty = MyList()
->>> assert empty == []
->>> empty.print_sorted()
->>> assert empty == []
 
-# Test type, isinstance, issubclass:
->>> assert type(MyList()) is MyList
->>> assert isinstance(MyList(), object)
->>> assert not isinstance(MyList(), list)
->>> assert issubclass(MyList, list)
->>> assert 'print_sorted' in dir(MyList)
-
-# Test that print_sorted() does not modify the original list:
->>> original_list = MyList()
->>> original_list.append(-300)
->>> original_list.append(50)
->>> original_list.append(-1)
->>> original_list_id = id(original_list)
->>> sorted_list = original_list.print_sorted()
->>> assert original_list == [-300, 50, -1]
->>> assert sorted_list == [-300, -1, 50]
->>> assert original_list_id != id(sorted_list)
-
+>>> l.print_sorted(1)
+Traceback (most recent call last):
+TypeError: print_sorted() takes 1 positional argument but 2 were given
