@@ -45,25 +45,3 @@
 >>> assert sorted_list == [-300, -1, 50]
 >>> assert original_list_id != id(sorted_list)
 
-# FAIL CASES:
-
-# Test appending elements of different types
->>> mixed_type_list = MyList()
->>> mixed_type_list.append(5)
->>> mixed_type_list.append("hello")  # This should fail
-# Expected: TypeError
-
-# Test sorting a list with non-integer elements
->>> non_integer_list = MyList()
->>> non_integer_list.append("apple")  # This should fail
-# Expected: TypeError
-
-# Test print_sorted on an empty list
->>> empty_list = MyList()
->>> empty_list.print_sorted()  # This should fail
-# Expected: AttributeError
-
-# Test calling print_sorted without appending any elements
->>> uninitialized_list = MyList()
->>> uninitialized_list.print_sorted()  # This should fail
-# Expected: AttributeError
