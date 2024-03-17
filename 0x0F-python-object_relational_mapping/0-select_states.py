@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     # Execute queries with SQL
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states")
     for row in cursor.fetchall():
         print(row)
     cursor.close()
